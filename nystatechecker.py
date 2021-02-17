@@ -3,7 +3,9 @@ import requests
 from pprint import pp as pprint
 
 SCRAPERAPIKEY = '8511b5e08855c3ad134c3f8c5a06557e'
+#ENDPOINT = "https://am-i-eligible.covid19vaccine.health.ny.gov/api/list-providers"
 ENDPOINT = "http://api.scraperapi.com?api_key="+ SCRAPERAPIKEY + "&url=https://am-i-eligible.covid19vaccine.health.ny.gov/api/list-providers"
+
 TOCHECK = ["Jones Beach - Field 3", "SUNY Stony Brook University Innovation and Discovery Center", "Aqueduct Racetrack - Racing Hall","Javits Center","Westchester County Center"]
 AVAILABLE_CODE = "AA"
 NOT_AVAILABLE_CODE = "NAC"
