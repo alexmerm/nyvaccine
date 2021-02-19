@@ -22,6 +22,8 @@ RUN touch /var/log/cron.log
 #Copy code
 COPY nystatechecker.py .
 RUN chmod +x nystatechecker.py
+COPY nychecker.sh .
+RUN chmod +x nychecker.sh
 
 
 # Run the command on container startup

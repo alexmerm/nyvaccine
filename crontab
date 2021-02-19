@@ -1,2 +1,2 @@
-*/15 * * * * root cd /home && ./nystatechecker.py >> /var/log/cron.log 2>&1 && curl -fsS -m 10 --retry 5 -o /dev/null https://hc-ping.com/***REMOVED***
+*/15 * * * * root cd /home && ./nychecker.sh >> /var/log/cron.log 2>&1
 # Don't remove the empty line at the end of this file. It is required to run the cron job
