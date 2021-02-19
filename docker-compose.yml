@@ -17,6 +17,7 @@ services:
       - TZ=America/New_York
     volumes:
       - ./vscode:/config
+      - /home/pi:/home/pi
     ports:
       - 8443:8443
     restart: unless-stopped
