@@ -2,8 +2,10 @@
 import requests
 from pprint import pp as pprint
 from twilio.rest import Client
+import sys
+import json
 
-SCRAPERAPIKEY = '8511b5e08855c3ad134c3f8c5a06557e'
+SCRAPERAPIKEY = '***REMOVED***'
 #ENDPOINT = "https://am-i-eligible.covid19vaccine.health.ny.gov/api/list-providers"
 ENDPOINT = "http://api.scraperapi.com?api_key="+ SCRAPERAPIKEY + "&url=https://am-i-eligible.covid19vaccine.health.ny.gov/api/list-providers"
 
@@ -21,7 +23,15 @@ TWILIO_AUTH_TOKEN = "***REMOVED***"
 
 def getAppts():
     r = requests.get(ENDPOINT)
-    return r.json()
+    try:
+        result = r.json()
+        pprint(result)
+    except json.decoder.JSONDecodeError:
+        result = r.text
+        print(result)
+        sys.exit(1)
+    return result
+
 def getApptsTest():
     return {'providerList': [{'providerName': 'Javits Center', 'address': 'New York, NY', 'availableAppointments': 'AA'}, {'providerName': 'Jones Beach - Field 3', 'address': 'Wantagh, NY', 'availableAppointments': 'NAC'}, {'providerName': 'State Fair Expo Center: NYS Fairgrounds', 'address': 'Syracuse, NY', 'availableAppointments': 'NAC'}, {'providerName': 'SUNY Albany ', 'address': 'Albany, NY', 'availableAppointments': 'NAC'}, {'providerName': 'Westchester County Center', 'address': 'White Plains, NY', 'availableAppointments': 'NAC'}, {'providerName': 'SUNY Stony Brook University Innovation and Discovery Center', 'address': 'Stony Brook, NY', 'availableAppointments': 'NAC'}, {'providerName': 'SUNY Potsdam Field House', 'address': 'Potsdam, NY', 'availableAppointments': 'AA'}, {'providerName': 'Aqueduct Racetrack - Racing Hall', 'address': 'South Ozone Park, NY', 'availableAppointments': 'NAC'}, {'providerName': 'Plattsburgh International Airport -Connecticut Building', 'address': 'Plattsburgh, NY', 'availableAppointments': 'NAC'}, {'providerName': 'SUNY Binghamton', 'address': 'Johnson City, NY', 'availableAppointments': 'NAC'}, {'providerName': 'SUNY Polytechnic Institute - Wildcat Field House', 'address': 'Utica, NY', 'availableAppointments': 'NAC'}, {'providerName': 'University at Buffalo South Campus - Harriman Hall', 'address': 'Buffalo, NY', 'availableAppointments': 'NAC'}, {'providerName': 'Rochester Dome Arena', 'address': 'Henrietta, NY', 'availableAppointments': 'NAC'}], 'lastUpdated': '2/11/2021, 8:01:37 PM'}
 def notify(locs):
