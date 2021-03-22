@@ -23,6 +23,11 @@ TWILIO_AUTH_TOKEN = "***REMOVED***"
 
 def getAppts():
     r = requests.get(ENDPOINT)
+    #retry once
+    if r.status_code == 500:
+    	print(r.text)
+    	print("scraperapi request failed, trying again.")
+    	r = requests.get(ENDPOINT)
     try:
         result = r.json()
         pprint(result)
