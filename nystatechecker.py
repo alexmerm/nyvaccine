@@ -9,14 +9,14 @@ SCRAPERAPIKEY = '***REMOVED***'
 #ENDPOINT = "https://am-i-eligible.covid19vaccine.health.ny.gov/api/list-providers"
 ENDPOINT = "http://api.scraperapi.com?api_key="+ SCRAPERAPIKEY + "&url=https://am-i-eligible.covid19vaccine.health.ny.gov/api/list-providers"
 
-TOCHECK = ["Jones Beach - Field 3", "SUNY Stony Brook University Innovation and Discovery Center", "Aqueduct Racetrack - Racing Hall","Javits Center","Westchester County Center"]
-AVAILABLE_CODE = "AA"
-NOT_AVAILABLE_CODE = "NAC"
+TOCHECK = ["Jones Beach - Field 3", "SUNY Stony Brook University Innovation and Discovery Center", "Aqueduct Racetrack - Racing Hall","Javits Center","Westchester County Center", "Suffolk CCC - Brentwood", "SUNY Old Westbury", "Stony Brook - Southampton"]
+AVAILABLE_CODE = "Y"
+NOT_AVAILABLE_CODE = "N"
 
 PUSHOVER_API_KEY = '***REMOVED***'
 PUSHOVER_USER_KEY = '***REMOVED***'
 
-NUMBERS = ['***REMOVED***']
+NUMBERS = ['***REMOVED***','***REMOVED***']
 TWILIO_ACCT_SID = "***REMOVED***"
 TWILIO_AUTH_TOKEN = "***REMOVED***"
 
@@ -75,7 +75,7 @@ def main():
     for loc in appts['providerList']:
         if loc['providerName'] in TOCHECK:
             pprint(loc)
-            if loc['availableAppointments'] == "AA":
+            if loc['availableAppointments'] == AVAILABLE_CODE:
                 availableLocs.append(loc['providerName'])
     if(len(availableLocs) > 0):
         notify(availableLocs)
