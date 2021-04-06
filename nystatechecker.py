@@ -16,7 +16,7 @@ NOT_AVAILABLE_CODE = "N"
 PUSHOVER_API_KEY = '***REMOVED***'
 PUSHOVER_USER_KEY = '***REMOVED***'
 
-NUMBERS = ['***REMOVED***','***REMOVED***']
+NUMBERS = ['***REMOVED***']
 TWILIO_ACCT_SID = "***REMOVED***"
 TWILIO_AUTH_TOKEN = "***REMOVED***"
 
@@ -68,9 +68,6 @@ def pushover(message):
         "priority" : 1
     })
     print(r.text)
-
-def sendText(msg):
-    pass
 
 def main():
     #Pull Appts
