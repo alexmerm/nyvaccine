@@ -13,6 +13,8 @@ from pprint import pprint
 START_PAGE = "https://www.cvs.com/immunizations/covid-19-vaccine"
 INFO_URL = "https://www.cvs.com/immunizations/covid-19-vaccine.vaccine-status.NY.json?vaccineinfo"
 
+SELENIUM_URL = "http://192.168.0.173:4444/wd/hub"
+
 #https://github.com/SeleniumHQ/selenium/issues/8672
 def cdp_cmd(driver, cmd, params={}):
   resource = "/session/%s/chromium/send_command_and_get_result" % driver.session_id
@@ -36,7 +38,7 @@ def getCvsStatus():
         'network' : 'ALL'
     }
     #print(capabilities)
-    with Remote(command_executor="http://localhost:4444/wd/hub", options=options, desired_capabilities=capabilities,) as driver:
+    with Remote(command_executor=SELENIUM_URL, options=options, desired_capabilities=capabilities,) as driver:
         #Set Window to random Size
         driver.set_window_size(random.randint(1201,1400), random.randint(1000,1300))
         wait = WebDriverWait(driver,20)
@@ -71,8 +73,9 @@ def getCvsStatus():
             print(city)
         print("Done")
         #driver.quit() I think this is done by the "with" statemenbt
-        return cities
+        return asOfTime, cities
 def main():
-    cities = getCvsStatus()
-    print(cities)
+    asOfTime,cities = getCvsStatus()
+    print(asOfTime)
+    pprint(cities)
 main()

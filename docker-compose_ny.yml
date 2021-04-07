@@ -1,0 +1,10 @@
+version: '3.7'
+
+services:
+
+  nystatecovid:
+    build:
+      context: .
+    container_name: nycovid 
+    restart: always
+    image: nycovid:latest
