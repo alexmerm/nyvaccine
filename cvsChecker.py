@@ -13,7 +13,7 @@ from pprint import pprint
 START_PAGE = "https://www.cvs.com/immunizations/covid-19-vaccine"
 INFO_URL = "https://www.cvs.com/immunizations/covid-19-vaccine.vaccine-status.NY.json?vaccineinfo"
 
-SELENIUM_URL = "http://192.168.0.57:4444/wd/hub"
+SELENIUM_URL = "http://localhost:4444/wd/hub"
 
 #https://github.com/SeleniumHQ/selenium/issues/8672
 def cdp_cmd(driver, cmd, params={}):

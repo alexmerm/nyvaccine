@@ -4,7 +4,7 @@ services:
   cvsCovidSelenium:
     container_name: cvsCovidSelenium 
     restart: always
-    image: selenium/standalone-chrome-debug:3.141.59-20210311
+    image: seleniarm/standalone-chromium
     volumes:
       - /dev/shm:/dev/shm 
     ports:

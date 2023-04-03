@@ -229,3 +229,19 @@ cities dict:
  {'city': 'YONKERS', 'state': 'NY', 'status': 'Fully Booked'}]
 ```
 
+
+
+## Explination abt what each file is:
+
+Ny Vaccine :
+- crontab
+- Dockerfile
+- nychecker.sh
+- docker-compose_ny.yml
+- nychecker.py
+- requirements.txt (?)
+
+Attempt to implement CVS Checker:
+- cvsAutoChecker.py : copies code from NY CHecker
+- cvsChecker.py : actually seleniums into the thing
+- docker-compose.yml : dockerfile for this
