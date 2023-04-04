@@ -245,3 +245,6 @@ Attempt to implement CVS Checker:
 - cvsAutoChecker.py : copies code from NY CHecker
 - cvsChecker.py : actually seleniums into the thing
 - docker-compose.yml : dockerfile for this
+
+
+NOTE: Ensure all phone numbers in config.yaml are in quotation marks and include the + 

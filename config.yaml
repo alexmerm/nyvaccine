@@ -1,0 +1,12 @@
+pushover: 
+  api_key: ***REMOVED***
+  user_key: ***REMOVED***
+twilio:
+  acct_sid: ***REMOVED***
+  auth_token: ***REMOVED***
+  from_number: "***REMOVED***"
+  numbers:
+    - "***REMOVED***"
+scraperapi:
+  api_key: ***REMOVED***
+debug : true
