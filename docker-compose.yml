@@ -1,14 +1,10 @@
 version: '3.7'
 
 services:
-  cvsCovidSelenium:
-    container_name: cvsCovidSelenium 
-    restart: always
-    image: seleniarm/standalone-chromium
-    volumes:
-      - /dev/shm:/dev/shm 
-    ports:
-      - 5901:5900
-      - 4444:4444
 
- 
+  nystatecovid:
+    build:
+      context: .
+    container_name: nycovid 
+    restart: always
+    image: nycovid:latest
