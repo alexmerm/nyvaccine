@@ -1,6 +1,0 @@
-.vscode/settings.json
-.DS_Store
-venv/
-.gitignore
-.gitattributes
-config.yaml

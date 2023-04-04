@@ -12,4 +12,4 @@ services:
       - ./config.yaml:/home/config.yaml:ro
       - ./locations.yaml:/home/locations.yaml:ro
     environment:
-      HC_PING_URL: https://hc-ping.com/***REMOVED***
+      HC_PING_URL: https://hc-ping.com/YOUR_HEALTHCHECK_URL

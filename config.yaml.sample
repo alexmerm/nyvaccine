@@ -1,12 +1,12 @@
 pushover: 
-  api_key: ***REMOVED***
-  user_key: ***REMOVED***
+  api_key: PUSHOVER_API_KEY
+  user_key: PUSHOVER_USER_KEY
 twilio:
-  acct_sid: ***REMOVED***
-  auth_token: ***REMOVED***
-  from_number: "***REMOVED***"
+  acct_sid: TWILIO_ACCT_SID
+  auth_token: TWILIO_AUTH_TOKEN
+  from_number: "+12223334444"
   numbers:
-    - "***REMOVED***"
+    - "+12223334444"
 scraperapi:
-  api_key: ***REMOVED***
+  api_key: SCRAPER_API_KEY
 debug : false
