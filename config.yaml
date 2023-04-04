@@ -9,4 +9,4 @@ twilio:
     - "***REMOVED***"
 scraperapi:
   api_key: ***REMOVED***
-debug : true
+debug : false

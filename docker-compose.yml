@@ -8,3 +8,8 @@ services:
     container_name: nycovid 
     restart: always
     image: nycovid:latest
+    volumes:
+      - ./config.yaml:/home/config.yaml:ro
+      - ./locations.yaml:/home/locations.yaml:ro
+    environment:
+      HC_PING_URL: https://hc-ping.com/***REMOVED***

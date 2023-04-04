@@ -138,7 +138,7 @@ def main():
     to_check = loadLocations(LOCATIONS_FILE)
 
     #Pull Appts
-    appts = getApptsTest()
+    appts = getAppts()
 
 
     #Determine which Places have available locations
