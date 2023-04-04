@@ -1,10 +1,10 @@
 # NY State Vaccine Appointment Availability Notifications
 A program to send pushover notifications and twilio texts when vaccine appointments become available using a python script running within a docker container
 ### Requirements
-- a free [ScraperAPI](https://www.scraperapi.com) account (the script will not exceed the amout of free requests per week)
+- a free [ScraperAPI](https://www.scraperapi.com) account (the script will not exceed the amount of free requests per week)
 - a free [Twilio](https://www.twilio.com/) account
 - a free [Pushover](https://pushover.net/) account
-- (optional) a [healthchecks.io](https://healthchecks.io/)
+- (optional) a [healthchecks.io](https://healthchecks.io/) account
 ## To Run
 1. Create a Pushover [API token](https://pushover.net/apps/build) for this app
 2. (optional) create a healthchecks.io check for this app with cron expression `*/30 * * * *`
