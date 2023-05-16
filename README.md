@@ -1,4 +1,5 @@
 # NY State Vaccine Appointment Availability Notifications
+![Text and Pushover Notification example](./notifications.jpg)
 A program to send pushover notifications and twilio texts when vaccine appointments become available using a python script running within a docker container
 ### Requirements
 - a free [ScraperAPI](https://www.scraperapi.com) account (the script will not exceed the amount of free requests per week)
